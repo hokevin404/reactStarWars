@@ -1,6 +1,8 @@
 // Import data
 import { swapi as apiFetch} from './services/sw-api';
 import Nav from './components/Nav';
+import Card from './components/Card';
+
 // Import modules
 import { useState } from 'react';
 import './App.css'
@@ -15,6 +17,7 @@ function App() {
     return (
         <>
             <Nav />
+            <Card starships={starships} />
         </>
     )
 }
