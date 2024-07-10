@@ -10,7 +10,12 @@ export function swapi() {
             for (let i = 1; i < 5; i++) {
                 const response = await fetch(`https://swapi.dev/api/starships/?page=${i}`)
                 const data = await response.json();
-                starships.push(data.results);
+                // console.log(data)
+                data.results.forEach((starship) => {
+                    starships.push(starship)
+                })
+                // starships.push(data.results);
+                console.log(starships)
             }
         } catch (error) {
             console.error(error);
