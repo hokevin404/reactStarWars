@@ -1,13 +1,14 @@
-import React from 'react'
 
-function Starship({name}) {
-  return (
-    <div>
-        <h4>
-            {name}
-        </h4>
-    </div>
-  )
+
+
+function Starship({ ship }) {
+
+    console.log(`Startship component ship: ${ship}`)
+    return (
+        <div>
+            <h1>{ship}</h1>
+        </div>
+    )
 }
 
 export default Starship

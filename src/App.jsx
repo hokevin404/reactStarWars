@@ -4,19 +4,25 @@ import Nav from './components/Nav';
 import Card from './components/Card';
 
 // Import modules
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css'
 
 function App() {
-    // Initiate api fetch function and store starship values
-    const data = apiFetch();
+    // Invoke api fetch function and store starship values
+    // const data = apiFetch();
     // State to hold starship data 
-    const [starships, setStarships] = useState(data);
-    console.log(starships)
+    const [starships, setStarships] = useState(null);
+    // console.log(starships)
+    
+    useEffect(()=>{
+        let data =  apiFetch();
+        console.log(data)
+        setStarships(data);
+    }, [])
 
     return (
         <>
-            <Nav />
+            {/* <Nav /> */}
             <Card starships={starships} />
         </>
     )
